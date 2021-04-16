@@ -28,8 +28,8 @@ var MouseX = 0;
 var MouseY = 0;
 let canvas = renderer.domElement;
 canvas.addEventListener('mousemove', function (evt) {
-  MouseX = evt.clientX/100;
-  MouseY = evt.clientY/100;
+  MouseX = evt.clientX/200;
+  MouseY = evt.clientY/200;
 });
 let pistolPos;
 function animate() {
