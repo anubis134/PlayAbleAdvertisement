@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "ThreeJSAdvertisement",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ThreeJSAdvertisement"
+	}
+}
