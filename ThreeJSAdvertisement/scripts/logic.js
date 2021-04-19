@@ -32,13 +32,14 @@ canvas.addEventListener('mousemove', function (evt) {
   MouseY = evt.clientY/200;
 });
 let pistolPos;
+
 function animate() {
 requestAnimationFrame( animate );
 renderer.render( scene, camera );
-camera.rotation.y = -MouseX;
+//camera.rotation.y = -MouseX;
 obj.rotation.y = -MouseX;
 
-camera.rotation.x = -MouseY;
+//camera.rotation.x = -MouseY;
 obj.rotation.x = -MouseY;
 obj.rotation.z = 0;
 Cube.rotation.x += 0.1;
@@ -50,6 +51,69 @@ if(Bulletmesh.position.z < Firstintersect.object.position.z){
 }
 }
 }
+
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', handleTouchMove, false);
+document.addEventListener('mousedown', handleTouchStart, false);
+document.addEventListener('mousemove', handleTouchMove, false);
+document.addEventListener('mouseup', handleTouchEnd, false);
+var xDown = null;
+var yDown = null;
+var xUpOld = null;
+var yUpOld = null;
+var isTouch = false;
+
+function handleTouchStart(evt) {
+    isTouch = true;
+    switch (evt.type) {
+        case 'mousedown':
+            xUpOld = evt.clientX - screen.width/2;
+            yUpOld = evt.clientY - screen.height/2;
+            break;
+
+        case 'touchstart':
+            xUpOld = evt.touches[0].clientX - screen.width/2;
+            yUpOld = evt.touches[0].clientY - screen.height/2;
+            break;
+    }
+};
+
+function handleTouchMove(evt) {
+    if (isTouch){
+        var xUpNew;
+        var yUpNew;
+        
+        switch (evt.type) {
+            case 'mousemove':
+                xUpNew = evt.clientX - screen.width/2;
+                yUpNew = evt.clientY - screen.height/2;
+                break;
+
+            case 'touchmove':
+                xUpNew = evt.touches[0].clientX - screen.width/2;
+                yUpNew = evt.touches[0].clientY - screen.height/2;
+                break;
+        }
+        var xDiff = (xUpNew - xUpOld)/500;
+        var yDiff = (yUpNew - yUpOld)/500;
+        camera.rotation.x += yDiff;
+        camera.rotation.y += xDiff;
+        camera.rotation.x = clamp(camera.rotation.x, -0.5, 0.5)
+        camera.rotation.y = clamp(camera.rotation.y, -0.7, 0.7)
+        console.log(camera.rotation.x + '    ' + camera.rotation.y);
+        xDown = null;
+        yDown = null;
+        xUpOld = xUpNew;
+        yUpOld = yUpNew;   
+    }
+};
+
+function handleTouchEnd(evt) {
+    isTouch = false;
+};
 
 var data = JSON.stringify( {
     "asset": {
