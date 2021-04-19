@@ -1,0 +1,11 @@
+Model Information:
+* title:	PP-91 KEDR
+* source:	https://sketchfab.com/3d-models/pp-91-kedr-974f6d83001044d68e5806775fe362fb
+* author:	LuddePudde (https://sketchfab.com/ludde5000)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PP-91 KEDR" (https://sketchfab.com/3d-models/pp-91-kedr-974f6d83001044d68e5806775fe362fb) by LuddePudde (https://sketchfab.com/ludde5000) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

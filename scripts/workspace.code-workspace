@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "ThreeJSAdvertisement",
+			"path": ".."
+		},
+		{
+			"name": "Polygon",
+			"path": "../../../Downloads/Web/Polygon"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ThreeJSAdvertisement"
+	}
+}
